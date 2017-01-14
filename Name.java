@@ -4,8 +4,8 @@ import java.awt.event.*;
 
 
 /**
- * Running class the uses High and GoodNight classes
- * @author jacob
+ * Running class the uses High and GoodNight objects
+ * @author Moses Mbugua
  *
  */
 public class Name extends JFrame{
@@ -15,6 +15,7 @@ public class Name extends JFrame{
 		new Name();
 	}
 	
+	//The buttons that are going to be displayed
 	private JButton buttonOK;
 	private JTextField textName;
 	
@@ -23,6 +24,11 @@ public class Name extends JFrame{
 	private JPanel panel1;
 	private JLabel text;
 	private JButton refresh;
+	
+	/**
+		Constructor for the program
+		Creates the guis
+	*/
 	public Name(){
 		this.setSize(325, 100);
 		this.setTitle("Bonjour");
@@ -58,8 +64,17 @@ public class Name extends JFrame{
 		this.setVisible(true);
 		
 	}
+	
+	/**
+		Class that deals with the event of a button being clicked
+	
+	*/
 	private class ButtonListener implements ActionListener
 	{
+		/**
+			When the button High or Good night is pressed a High or Goodnight object is created
+			@params, the event that causes a certain action to occur
+		*/
 		public void actionPerformed(ActionEvent e){
 			
 		if(actionPerformed2(e) == true){
@@ -81,6 +96,11 @@ public class Name extends JFrame{
 		}
 		}
 	}
+		/**
+			Makes sure the user entered their name before proceeding
+			@params, the event, a click
+			@return, true if the user entered a name, false otherwise
+		*/
 		public boolean actionPerformed2(ActionEvent e){
 			if(e.getSource() == buttonOK){
 				String name = textName.getText();
